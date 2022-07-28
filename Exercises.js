@@ -32,18 +32,21 @@ console.log(vokaalit("Kissa on kaunis"));
 function histogrammi(sana) {
     let histogrammi = {}
     sana = sana.toLowerCase()
+    
+
     for(let i=0; i<sana.length; i++){
         if(histogrammi[sana[i]]!=undefined){
             histogrammi[sana[i]]++;
         }
+
         else{
             histogrammi[sana[i]] = 1;
         }
     }
-    function printtaus(histogram) {
-        for(let i in histogram){
-            let value = histogram[i]
-            console.log(`${i}: ${'*'.repeat(value)}`);
+    
+    function printtaus(h) {
+        for(let i in h){
+            console.log(`${i}: ${'*'.repeat(h[i])}`);
         }
     }
     return printtaus(histogrammi)
